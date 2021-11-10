@@ -1,0 +1,36 @@
+
+.nav{
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    list-style-type: none;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+    background-color: rgb(34, 34, 34);
+    /* -moz-box-shadow: 0 0 20px #999;
+    -webkit-box-shadow: 0 0 20px #999;
+    box-shadow: 0 0 20px #999; */
+    
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+#Logo{
+    padding: 0px;
+    margin: 2px;
+    margin-bottom: 4px;
+    margin-left: 30px;
+    margin-top: 4px;
+    margin-right: 2px;
+}
+#Title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    margin-left: 8px;
+}
+
+/* .list-items{
+    margin: 0px;
+    padding: 10px;
+} */

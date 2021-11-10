@@ -1,0 +1,120 @@
+.DetailsBox{
+    /* width: 200px; */
+    /* height: 89%; */
+    height: 740px;
+    overflow-y: scroll;
+    list-style-type: none;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+    
+    background-color: rgb(34, 34, 34);
+    /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
+    -webkit-box-shadow: 0 0 20px rgb(134, 134, 134);
+    box-shadow: 0 0 20px  rgb(134, 134, 134); */
+    margin-bottom: 10px;
+    
+    
+}
+/* body{
+    backdrop-filter: blur(5px);
+} */
+.cardDetails{
+    color: white;
+    background-color: rgb(29, 29, 29);
+    border-radius: 10px;
+    width: 350px;
+     -moz-box-shadow: 0 0 20px  rgb(19, 19, 19);
+    -webkit-box-shadow: 0 0 20px rgb(19, 19, 19);
+    box-shadow: 0 0 20px  rgb(19, 19, 19);
+
+}
+.secondimg{
+    color: white;
+    background-color: rgb(29, 29, 29);
+    border-radius: 10px;
+    /* width: 350px; */
+     -moz-box-shadow: 0 0 20px  rgb(19, 19, 19);
+    -webkit-box-shadow: 0 0 20px rgb(19, 19, 19);
+    box-shadow: 0 0 20px  rgb(19, 19, 19);
+}
+img{
+   
+    border-radius: 10px;
+}
+#apple{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    margin-left: 150px;
+
+}
+p{
+    font-size: 30px;
+ 
+    margin-left: 150px;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.para,.heading{
+    font-family: 'Oswald', sans-serif;
+    margin-left: 150px;
+ 
+}
+
+.para{
+    font-size: 30px;
+    /* margin-top: 50px; */
+}
+.heading{
+    font-size: 60px;
+    margin-top: 60px;
+}
+.first{
+    /* background-color: rgb(44, 44, 44); */
+}
+.leftArrow{
+    font-size: 20px;
+}
+.rank{
+    margin-left: 150px;
+    font-style: italic;
+}
+.backButton{
+    transition: visibility 0s, opacity 1s linear;
+}
+.backButton:hover{
+   
+    height: 55px;
+    width: 80px;
+}
+.second-card{
+    background-color: rgb(41, 41, 41);
+}
+
+#badge{
+    left: 92%;
+    background-color: rgb(109, 109, 109);
+    line-height: 2;
+    font-weight: bold;
+    /* font-style: ; */
+    transition: visibility 0s, opacity 1s linear;
+    font-family: 'Oswald', sans-serif;
+    border: 2px solid rgb(124, 124, 124);
+}
+#badge:hover{
+   border: 2px solid rgb(255, 255, 255);
+   color: black;
+   font-family: 'Oswald', sans-serif;
+}
+
+/* for player */
+
+

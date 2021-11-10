@@ -1,0 +1,52 @@
+
+.SearchBox{
+    /* width: 200px; */
+    /* height: 89%; */
+    height: 740px;
+    overflow-y: scroll;
+    list-style-type: none;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 10px;
+    
+    background-color: rgb(34, 34, 34);
+    /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
+    -webkit-box-shadow: 0 0 20px rgb(134, 134, 134);
+    box-shadow: 0 0 20px  rgb(134, 134, 134); */
+    margin-bottom: 10px;
+    
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.art-hed{
+    padding-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 40px;
+
+    color: rgb(109, 109, 109);
+}
+.search-item{
+    padding: 40px;
+    padding-top: 13px;
+   
+}
+.Result-items{
+    padding: 10px;
+}
+
+.list-items{
+    padding: 10px;
+    margin: 10px;
+}
+.card{
+    margin: 40px;
+}
+
+textarea{
+    width: 800px;
+    background-color: rgb(221, 221, 221);
+    margin-right: 50px;
+    padding-left: 10px;
+    padding-top: 5px;
+}

@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.art-hed{
+    padding-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 40px;
+
+    color: rgb(109, 109, 109);
+}

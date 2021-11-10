@@ -1,0 +1,88 @@
+
+.leftnav{
+    /* width: 200px; */
+    height: 810px;
+    display: flex;
+    align-items: center;
+    /* justify-content:center; */
+    list-style-type: none;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+    background-color: rgb(34, 34, 34);
+    /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
+    -webkit-box-shadow: 0 0 20px rgb(134, 134, 134);
+    box-shadow: 0 0 20px  rgb(134, 134, 134); */
+    
+    
+}
+/* .leftItem5{
+    color: white;
+} */
+
+#Logo-image{
+    /* padding: 20px; */
+    height: 100px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.title-col{
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.quote{
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+.list{
+    padding: 10px;
+    margin: 10px;
+} */
+
+.logo-design{
+    background-color: rgb(66, 66, 66);
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    margin-top: 10px;
+    /* border: 4px solid red; */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 190px;
+    width: 385px;
+}
+
+.leftItem{
+    height: 50px;
+    /* display: flex; */
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    align-items: center;
+    /* justify-content: center; */
+    width: 385px;
+    background-color: rgb(83, 83, 83);
+    border-radius: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 20px;
+}
+.leftItem:hover{
+    color: black;
+}
+.firstItem{
+    margin-top: 90px;
+}
+
+.left-nav-row{
+    margin-top: 6px;
+    margin-left: 22px;
+}
+

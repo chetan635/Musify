@@ -1,0 +1,85 @@
+
+.PlaylistBox{
+    /* width: 200px; */
+    /* height: 89%; */
+    height: 740px;
+    overflow-y: scroll;
+    list-style-type: none;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    
+    
+    background-color: rgb(34, 34, 34);
+    /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
+    -webkit-box-shadow: 0 0 20px rgb(134, 134, 134);
+    box-shadow: 0 0 20px  rgb(134, 134, 134); */
+    margin-bottom: 10px;
+    
+    
+}
+
+.PlaylistCard{
+    height: auto;
+    width: 95%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: rgb(29, 29, 29);
+    padding: 5px;
+    border-radius: 5px;
+}
+.PlaylistCard:hover{
+    background-color: rgb(54, 54, 54);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.heading2{
+    font-family: 'Oswald', sans-serif;
+    /* margin-left: 150px; */
+    color: white;
+    margin: 0px;
+    font-size: 30px;
+}
+.para2{
+    font-weight: bold;
+    color: white;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.playlistHeading{
+    margin: 20px;
+    color: white;
+    font-size: 50px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.playlistImage{
+    height: 66px;
+    transition: 1s;
+    position: relative;
+    margin-left: -97px;
+    /* position: absolute; */
+    /* width: 50px; */
+}
+.playlistImage:hover{
+    height: 76px;
+}
+.imgcol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first2{
+    color: white;
+}
