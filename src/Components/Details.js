@@ -125,7 +125,7 @@ export default function Details(props) {
                         <div className="col-md-3">
                             <div class="card cardDetails" onClick={props.change} style={{}}>
                                 <span onClick={props.change, handleback} class=" backButton position-absolute top-0  translate-middle badge rounded-pill bg-warning " style={{ color: 'black', left: "85 %", zIndex: 1 }}>
-                                    <div className="btn leftArrow">←</div>
+                                    <div className="btn leftArrow">{`<`}</div>
                                     <span class="visually-hidden">unread messages</span>
                                 </span>
                                 <img onLoad={handleImage(props.image)} src={props.image} id="Main-Image" class="card-img-top" alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />

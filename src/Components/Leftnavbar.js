@@ -21,11 +21,11 @@ export default function Leftnavbar() {
             <Link to="/">
             <div  className="firstItem leftItem" id="leftItem">
             <div className="row left-nav-row">
-                    <div className="col-md-2">
-                        <div className="fa fa-search"></div>
+                    <div className="col-md-2  leftItem-logo1">
+                    <span class="iconify" data-icon="el:search-alt"></span>
                     </div>
-                    <div className="col-md-10">
-                    <div className="">Search</div>
+                    <div className="col-md-10 leftItem-title">
+                    <div className="">Home</div>
                     </div>
                 </div>
             </div>
@@ -33,10 +33,10 @@ export default function Leftnavbar() {
             <Link to="/playlist">
             <div className="secondItem leftItem" id="leftItem2">
                 <div className="row left-nav-row">
-                    <div className="col-md-2">
-                        <div className="fa fa-music"></div>
+                    <div className="col-md-2  leftItem-logo2">
+                    <span class="iconify" data-icon="ic:baseline-playlist-add-check-circle"></span>
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-10 leftItem-title">
                     <div className="">Playlist</div>
                     </div>
                 </div>
@@ -45,11 +45,11 @@ export default function Leftnavbar() {
             <Link to="/SearchByAlbum">
             <div className="thirdItem leftItem" id="leftItem3">
                 <div className="row left-nav-row">
-                    <div className="col-md-2">
-                        <div className="fa fa-bookmark"></div>
+                    <div className="col-md-2  leftItem-logo3">
+                    <span class="iconify" data-icon="dashicons:album"></span>
                     </div>
-                    <div className="col-md-10">
-                    <div className="">SearchByAlbum</div>
+                    <div className="col-md-10 leftItem-title">
+                    <div className="">Album</div>
                     </div>
                 </div>
             </div>

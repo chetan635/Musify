@@ -89,6 +89,9 @@ p{
 }
 .backButton{
     transition: visibility 0s, opacity 1s linear;
+    height: 55px;
+    width: 60px;
+    
 }
 .backButton:hover{
    

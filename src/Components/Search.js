@@ -56,9 +56,10 @@ export default function Search() {
           <div className="SearchBox">
               <h1 className="art-hed">Search By Artist</h1>
                 <div className="search-item d-flex">
-                    <textarea rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem}  placeholder="Search" aria-label="Search" />
+                    <textarea rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem}  placeholder="Search by Artist" aria-label="Search" />
                     <button onClick={handleOnSearch} className="btn btn-outline-success" type="submit">Search</button>
                 </div>
+              
                 <div className="row Result-items">
                     {data.map((element)=>{
                        return <div className="col-md-3" key={element.id} >

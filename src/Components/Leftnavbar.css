@@ -61,7 +61,7 @@
 }
 
 .leftItem{
-    height: 50px;
+    height: 55px;
     /* display: flex; */
     color: white;
     font-family: 'Oswald', sans-serif;
@@ -74,8 +74,28 @@
     border: 2px solid rgb(255, 255, 255);
     margin: 20px;
 }
+
 .leftItem:hover{
-    color: black;
+    background-color: rgb(121, 121, 121);
+}
+
+.leftItem:hover .leftItem-logo1{color: rgb(230, 0, 0);}
+.leftItem:hover .leftItem-logo2{color: rgb(0, 195, 255);}
+.leftItem:hover .leftItem-logo3{color: rgb(255, 238, 0);}
+.leftItem:hover .leftItem-title{color: rgb(34, 34, 34);}
+
+/* .leftItem-logo1:hover{
+    color: rgb(97, 0, 81);
+}
+.leftItem-logo2:hover{
+    color: rgb(0, 101, 141);
+}
+.leftItem-logo2:hover{
+    color: rgb(57, 179, 0);
+} */
+
+.leftItem-title{
+    padding-bottom: 2px;
 }
 .firstItem{
     margin-top: 90px;

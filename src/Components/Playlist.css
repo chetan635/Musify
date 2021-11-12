@@ -23,6 +23,29 @@
     
 }
 
+.filter{
+    padding-left: 35px;
+    color: white;
+    position: relative;
+    font-size: 35px;
+}
+.filter-title{
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+}
+.category{
+    display: none;
+    transition: 1s;
+}
+.btn{
+    font-family: 'Oswald', sans-serif;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.filter-row{
+    padding: 20px;
+}
+
 .PlaylistCard{
     height: auto;
     width: 95%;
@@ -82,4 +105,11 @@
 }
 .first2{
     color: white;
+}
+
+.alert{
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 10px;
 }

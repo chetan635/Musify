@@ -9,7 +9,7 @@ export default function Playlist() {
     const [allPlaylists, setallPlaylists] = useState([])
     const [change2, setchange2] = useState(true)
     const [elemant, setelemant] = useState([])
-
+    const [filter_state, setfilter_state] = useState("")
     const [img, setimg] = useState("https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg")
     const [hed, sethed] = useState("Playlist")
     const [art, setart] = useState("All Items")
@@ -49,7 +49,7 @@ export default function Playlist() {
         handlePlay()
     }
 
-    function handleUpper(a,b,c){
+    function handleUpper(a, b, c) {
         sethed(b)
         setimg(a)
         setart(c)
@@ -89,6 +89,99 @@ export default function Playlist() {
 
     }
 
+    const handleFilter = () => {
+        console.log("icon")
+        if (document.getElementById("a").style.display == "none") {
+            document.getElementById("a").style.display = "block"
+            document.getElementById("b").style.display = "block"
+            document.getElementById("c").style.display = "block"
+            document.getElementById("icon123").setAttribute("data-icon", "clarity:filter-solid")
+        }
+        else {
+            document.getElementById("a").style.display = "none"
+            document.getElementById("b").style.display = "none"
+            document.getElementById("c").style.display = "none"
+            document.getElementById("icon123").setAttribute("data-icon", "clarity:filter-off-solid")
+        }
+    }
+    const filter = (type)=>{
+
+        document.getElementById("a").style.display = "none"
+        document.getElementById("b").style.display = "none"
+        document.getElementById("c").style.display = "none"
+        document.getElementById("icon123").setAttribute("data-icon", "clarity:filter-off-solid")
+
+        setfilter_state(type);
+        document.getElementById("alert").style.display="block";
+        setTimeout(() => {
+            document.getElementById("alert").style.display="none";
+        }, 2000);
+
+
+    }
+    const handleSong = () => {
+        var x = JSON.parse(localStorage.getItem("allplay"))
+        console.log(x);
+        x.sort(function (a, b) {
+            if (a.title > b.title) {
+                return 1;
+            }
+            else if (a.title < b.title) {
+                return -1
+            }
+            return 0;
+        });
+        localStorage.setItem("allplay", JSON.stringify(x))
+        filter("Song")
+        handle()
+
+        
+
+
+
+    }
+
+    const handleDuration = () => {
+        var x = JSON.parse(localStorage.getItem("allplay"))
+        console.log(x);
+        x.sort(function (a, b) {
+            if (a.duration > b.duration) {
+                return 1;
+            }
+            else if (a.duration < b.duration) {
+                return -1
+            }
+            return 0;
+        });
+        localStorage.setItem("allplay", JSON.stringify(x))
+        filter("Duration")
+        handle()
+    }
+
+    const handleArtist = () => {
+        var x = JSON.parse(localStorage.getItem("allplay"))
+        console.log(x);
+        x.sort(function (a, b) {
+            if (a.artist.name > b.artist.name) {
+                return 1;
+            }
+            else if (a.artist.name < b.artist.name) {
+                return -1
+            }
+            return 0;
+        });
+        localStorage.setItem("allplay", JSON.stringify(x))
+        filter("Artist")
+        handle()
+    }
+
+    const Time = (x) => {
+        var z = (x % 60)
+        if (z < 10) {
+            z = `0${(x % 60)}`
+        }
+        return `${~~(x / 60)} : ${(z)}`
+    }
 
 
 
@@ -103,7 +196,7 @@ export default function Playlist() {
                                     <div className="btn leftArrow">←</div>
                                     <span class="visually-hidden">unread messages</span>
                                 </span> */}
-                            <img onLoad={handleImage(img),handle} src={img} id="Main-Image" class="card-img-top" alt="..." />
+                            <img onLoad={handleImage(img), handle} src={img} id="Main-Image" class="card-img-top" alt="..." />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -118,21 +211,56 @@ export default function Playlist() {
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
 
+            <div className="row filter-row">
+                <div className="col-md-2">
+                    <div onClick={handleFilter} className="filter"><span id="icon123" class="iconify" data-icon="clarity:filter-off-solid"></span><span className="filter-title"> Filter By</span></div>
+                </div>
+                <div className="col-md-1">
 
-            <h1 style={{ display: "block" }} id="hed"  className="playlistHeading">Your Playlist</h1>
+                </div>
+                <div className="col-md-1">
+                    <div id="a" className="category">
+                        <div onClick={handleSong} className="btn btn-success">
+                            Song
+                        </div>
+                    </div>
+
+                </div>
+                <div className="col-md-1">
+                    <div id="b" className="category">
+                        <div onClick={handleArtist} className="btn btn-danger">
+                            Artist
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-1 ">
+                    <div id="c" className="category">
+                        <div onClick={handleDuration} className="btn btn-warning">
+                            Duration
+                        </div>
+                    </div>
+                </div>
+                <div  className="col-md-6 alert" style={{display:"none"}} id="alert">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success</strong> The playlist is filtered accourding to {filter_state}
+                    </div>
+                </div>
+            </div>
+            <h1 style={{ display: "block" }} id="hed" className="playlistHeading">Your Playlist</h1>
             {
                 allPlaylists.map(element => {
                     return <>
-                        <div onClick={()=>{handleUpper(element.album.cover_xl,element.title,element.artist.name)}} className="PlaylistCard" key={element.id}>
+                        <div onClick={() => { handleUpper(element.album.cover_xl, element.title, element.artist.name) }} className="PlaylistCard" key={element.id}>
                             <div className="row">
                                 <div className=" imgcol col-md-2">
                                     <img className="playlistImage" src={element.album.cover_xl} alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />
                                 </div>
-                                <div className="col-md-8">
+                                <div className="col-md-6">
                                     <div className="heading2">{element.title}</div>
                                     {/* <br /> */}
                                     <div className="para2">
@@ -140,6 +268,9 @@ export default function Playlist() {
                                     </div>
 
 
+                                </div>
+                                <div className="col-md-2 para2">
+                                    {Time(element.duration)}
                                 </div>
                                 <div className="col-md-2 icons">
                                     <div onClick={() => handleDelete(element)} className="btn btn-danger">
