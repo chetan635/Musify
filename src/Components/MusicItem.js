@@ -12,10 +12,15 @@ export default function MusicItem(props) {
     //       }
 
     // }
+    const handleItem=()=>{
+        props.searchaudioFunc()
+        console.log("hello")
+        props.xyz()
+    }
 
 
     return (
-        <div className="card musicCard "   >
+        <div className="card musicCard  chetan"  id={props.index}  >
             <img  src={props.image}  className="card-img-top poster" alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
@@ -24,7 +29,7 @@ export default function MusicItem(props) {
                 <p className="card-text">{props.artist}</p>
                 </div>
                 <div className="col">
-                <img  className="play-button"  src={PlayButton} alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />
+                <img onClick={handleItem}  className="play-button"  src={PlayButton} alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />
                 </div>
                 </div>
                 {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}

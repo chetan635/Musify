@@ -6,12 +6,14 @@ import "./Search.css"
 import MusicItem from './MusicItem'
 import spinner from './spinner'
 import Details from './Details'
+import search from './Search2.png'
 import AlbumElements from './AlbumElements'
 
 export default function Search() {
     const [SearchItem, setSearchItem] = useState("")
     const [Toggle, setToggle] = useState(true)
     const [data, setdata] = useState([])
+    const [display, setdisplay] = useState("block")
 
     const [key, setkey] = useState("")
 
@@ -27,6 +29,12 @@ export default function Search() {
     }
 
     const handleOnSearch = async() => {
+        if(SearchItem == ""){
+            return 
+        }
+        if(display==="block"){
+           setdisplay("none")
+        }
        await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${SearchItem}`, {                             
             "method": "GET",
             "headers": {
@@ -68,6 +76,10 @@ export default function Search() {
         setToggle(!Toggle)
         // console.log(object)
     }
+
+    
+
+
     if(Toggle){
         return (
     
@@ -77,6 +89,7 @@ export default function Search() {
                     <textarea rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem}  placeholder="Search by Album" aria-label="Search" />
                     <button onClick={handleOnSearch} className="btn btn-outline-success" type="submit">Search</button>
                 </div>
+                <img style={{display:{display}}} className="searchImage" id="searchImage"  src={search} alt="" />
                 <div className="row Result-items">
                     {data.map((element)=>{
                        return <div className="col-md-3" key={element.id} >

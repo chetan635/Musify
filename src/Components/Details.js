@@ -6,6 +6,7 @@ import Stop from './stop.png'
 import SongGif2 from './SongGif2.gif'
 import Added from './AddedToPlayList.gif'
 import { average, prominent } from 'color.js'
+import { useEffect } from 'react/cjs/react.development'
 
 
 export default function Details(props) {
@@ -15,15 +16,51 @@ export default function Details(props) {
 
     const [Color, setColor] = useState("")
 
-
+    
 
 
     const handleToggel = () => {
         var x = document.getElementById("audio")
 
-        if (toggle == true) {
+        if (toggle === true) {
             document.getElementById("SongGif").style.display = "block"
             x.play()
+
+            // for adding to history
+         
+            var array = JSON.parse(localStorage.getItem("Recent")) || []
+            for (let index = 0; index < array.length; index++) {
+                if (props.element.id == array[index].object.id) {
+                    array.splice(index, 1);
+                    break
+                }
+            }
+            if(array===[]){
+                var p = {
+                    "object" : props.element,
+                    "image" : props.image
+                }
+                array.push(p);
+                console.log(array)
+                localStorage.setItem("Recent",JSON.stringify(array))
+            }
+            else{
+                var p = {
+                    "object" : props.element,
+                    "image" : props.image
+                }
+                array.push(p)
+                console.log(array)
+                localStorage.setItem("Recent",JSON.stringify(array))
+
+            }
+
+            props.xyz()
+            
+
+
+
+
         }
         else {
             document.getElementById("SongGif").style.display = "none"
@@ -39,6 +76,7 @@ export default function Details(props) {
     }
 
     function handleImage(img) {
+        document.getElementById("bottomMusic").style.display = "none"
         if (img == null) {
             document.getElementById("first").style.backgroundColor = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44);
 
@@ -67,6 +105,7 @@ export default function Details(props) {
     }
 
     const handleback = () => {
+        document.getElementById("bottomMusic").style.display = "block"
         document.body.style.backgroundColor = "black"
         document.getElementById("logo-design").style.backgroundColor = "#" + componentToHex(66) + componentToHex(66) + componentToHex(66);
         document.getElementById("leftItem").style.border = `4px solid white`
@@ -80,12 +119,12 @@ export default function Details(props) {
         var allPlaylist = JSON.parse(localStorage.getItem("allplay"))||[]
 
         allPlaylist.forEach(ele => {
-            if(ele.id == props.element.id){
+            if(ele.id === props.element.id){
                 x= true
             }
         });
         // console.log(allPlaylist)
-        if(allPlaylist.length==0){
+        if(allPlaylist.length===0){
             allPlaylist.push(props.element)
 
             localStorage.setItem("allplay",JSON.stringify(allPlaylist))
@@ -156,8 +195,8 @@ export default function Details(props) {
                                 <img className="secondimg" style={{ height: "100px", width: "100px", margin: "20px" }} src={props.image} class="card-img-top" alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />
                             </div>
                             <div className="col-md-4">
-                                {props.element.title} <br />
-                                {props.element.artist.name}
+                              <div className="title-audio">{props.element.title}</div>
+                                <div className="name-audio">{props.element.artist.name}</div>
                             </div>
                             <div className="col-md-4">
                                 <img id="SongGif" style={{ height: "40px", width: "140px", display: "none" }} src={SongGif2} alt="" />

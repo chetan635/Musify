@@ -179,6 +179,6 @@ export default function AlbumElements(props) {
         )
     }
     else{
-        return <div><Details change={handlePlay} image={img} element={elemant2} /></div>
+        return <div><Details xyz={props.xyz} change={handlePlay} image={img} element={elemant2} /></div>
     }
 }

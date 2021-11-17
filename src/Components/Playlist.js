@@ -5,7 +5,7 @@ import "./Playlist.css"
 
 import { average, prominent } from 'color.js'
 
-export default function Playlist() {
+export default function Playlist(props) {
     const [allPlaylists, setallPlaylists] = useState([])
     const [change2, setchange2] = useState(true)
     const [elemant, setelemant] = useState([])
@@ -13,13 +13,17 @@ export default function Playlist() {
     const [img, setimg] = useState("https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg")
     const [hed, sethed] = useState("Playlist")
     const [art, setart] = useState("All Items")
+    const [p, setp] = useState("")
     // const [ran, setran] = useState(0)
 
 
     const handle = () => {
         var allPlaylist = JSON.parse(localStorage.getItem("allplay"))
+        if(allPlaylist===null){
+            allPlaylist=[]
+        }
         setallPlaylists(allPlaylist)
-        // console.log(allPlaylists)
+        console.log(allPlaylists)
         document.getElementById("hed").style.display = "none"
     }
 
@@ -40,16 +44,18 @@ export default function Playlist() {
     }
     const handlePlay = () => {
         setchange2(!change2)
-        console.log(change2);
+        // console.log(change2);
     }
-    function handleEle(ele) {
-        console.log("hello chetan");
+    function handleEle(ele,p) {
+        // console.log("hello chetan");
         setelemant(ele)
-        console.log(elemant);
+        setp(p)
+        // console.log(elemant);
         handlePlay()
     }
 
-    function handleUpper(a, b, c) {
+    function handleUpper(a, b, c,d) {
+        // document.getElementById(d).style.backgroundColor="black"
         sethed(b)
         setimg(a)
         setart(c)
@@ -185,6 +191,7 @@ export default function Playlist() {
 
 
 
+
     if (change2) {
         return <div className="PlaylistBox" id="PlaylistBox">
 
@@ -247,18 +254,23 @@ export default function Playlist() {
                 </div>
                 <div  className="col-md-6 alert" style={{display:"none"}} id="alert">
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success</strong> The playlist is filtered accourding to {filter_state}
+                        <strong>Success</strong> The playlist is filtered accourding to <strong>{filter_state}</strong>
                     </div>
                 </div>
             </div>
             <h1 style={{ display: "block" }} id="hed" className="playlistHeading">Your Playlist</h1>
             {
                 allPlaylists.map(element => {
+                    try{
+                        var  p = element.album.cover_xl
+                    }catch(error){
+                        var  p="https://nogmi.biz/assets/img/noimage.jpeg"
+                    }
                     return <>
-                        <div onClick={() => { handleUpper(element.album.cover_xl, element.title, element.artist.name) }} className="PlaylistCard" key={element.id}>
+                        <div  onClick={() => { handleUpper(p, element.title, element.artist.name,elemant.id) }} className="PlaylistCard" key={element.id}>
                             <div className="row">
                                 <div className=" imgcol col-md-2">
-                                    <img className="playlistImage" src={element.album.cover_xl} alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" />
+                                    <img className="playlistImage" src={p} alt="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';"/>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="heading2">{element.title}</div>
@@ -276,7 +288,7 @@ export default function Playlist() {
                                     <div onClick={() => handleDelete(element)} className="btn btn-danger">
                                         <i style={{ fontSize: "25px" }} className="fa fa-trash"></i>
                                     </div>
-                                    <div onClick={() => handleEle(element)} className="btn btn-warning">
+                                    <div onClick={() => handleEle(element,p)} className="btn btn-warning">
                                         <i style={{ fontSize: "25px" }} className="fa fa-play-circle-o"></i>
                                     </div>
                                 </div>
@@ -289,7 +301,7 @@ export default function Playlist() {
         </div>
     }
     else {
-        return <div><Details change={handlePlay} image={elemant.album.cover_xl} element={elemant} /></div>
+        return <div><Details xyz={props.xyz} change={handlePlay} image={p} element={elemant} /></div>
     }
 
 

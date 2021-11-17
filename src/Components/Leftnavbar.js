@@ -2,7 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Leftnavbar.css"
 import Logo from "./Musify.gif"
-export default function Leftnavbar() {
+import music from "./music-logo.png"
+export default function Leftnavbar(props) {
+
+    const handleHide = ()=>{
+        document.getElementById("songImage").style.display="none"
+        document.getElementById("imgcol").style.display = "block"
+    }
+
+
     return (
         <div className="leftnav flex-column">
             <div className="logo-design" id="logo-design">
@@ -18,7 +26,7 @@ export default function Leftnavbar() {
                     </div>
                 </div>
             </div>
-            <Link to="/">
+            <div onClick={props.displaySearch}>
             <div  className="firstItem leftItem" id="leftItem">
             <div className="row left-nav-row">
                     <div className="col-md-2  leftItem-logo1">
@@ -29,8 +37,8 @@ export default function Leftnavbar() {
                     </div>
                 </div>
             </div>
-            </Link>
-            <Link to="/playlist">
+            </div>
+            <div onClick={props.displayPlaylist}>
             <div className="secondItem leftItem" id="leftItem2">
                 <div className="row left-nav-row">
                     <div className="col-md-2  leftItem-logo2">
@@ -41,8 +49,8 @@ export default function Leftnavbar() {
                     </div>
                 </div>
             </div>
-            </Link>
-            <Link to="/SearchByAlbum">
+            </div>
+            <div onClick={props.displayAlb}>
             <div className="thirdItem leftItem" id="leftItem3">
                 <div className="row left-nav-row">
                     <div className="col-md-2  leftItem-logo3">
@@ -53,7 +61,10 @@ export default function Leftnavbar() {
                     </div>
                 </div>
             </div>
-            </Link>
+            </div>
+            <div onClick={handleHide} >
+                <img className="songImage" id ="songImage" src="" style={{height:"170px",width:"170px" ,marginRight:"170px",display:"none"}} alt="" />
+            </div>
          
             
         </div>

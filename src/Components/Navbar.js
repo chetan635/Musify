@@ -1,6 +1,9 @@
 import React from 'react'
 import "./Navbar.css"
+import music from "./music-logo.png"
 import Musify from "./Musify.gif"
+
+
 export default function Navbar() {
     return (
         <div className="nav">

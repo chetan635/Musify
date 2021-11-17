@@ -1,0 +1,112 @@
+.bottom{
+    position: absolute ;
+    bottom: 0px;
+    height: 104px;
+    font-family: 'Oswald', sans-serif;
+    background-color: rgb(26, 26, 26);
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+.audioBar{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.details{
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.end{
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+#myProgressBar{
+    width: 470px;
+    margin-top: 12px;
+    height: 2px;
+    outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #ce2900 0%, );
+  border: solid 1px #e62200;
+  border-radius: 8px;
+    
+}
+#myProgressBar:hover{
+    height: 7px;
+}
+
+.play-b{
+    font-size: 40px;
+    margin-top: 2px;
+}
+.pause-b{
+    font-size: 40px;
+    margin-top: 2px;
+}
+.nex{
+    font-size: 30px;
+  
+}
+.bac{
+    font-size: 30px;
+   
+}
+.bottomImage{
+    height: 70px;
+    margin-left: 15px;
+    padding: 5px;
+}
+.image-row{
+    width: 40%;
+    margin-top: 14px;
+}
+
+.backward{
+    font-size: 22px;
+    padding: 5px;
+}
+.forward{
+    font-size: 22px;
+    padding: 5px;
+}
+.volume-on{
+    font-size: 21px;
+}
+.volume-off{
+    font-size: 21px;
+}
+#volumeBar{
+    height: 2px;
+    margin: 9px;
+}
+.setting{
+    font-size: 22px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+/* .caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
+} */
+
+.hed3{
+    font-size: 20px;
+}
+.title3{
+    color: rgb(156, 156, 156);
+}
+
+
+
+
+
