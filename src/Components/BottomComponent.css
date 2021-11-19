@@ -1,5 +1,5 @@
 .bottom{
-    position: absolute ;
+    position: fixed ;
     bottom: 0px;
     height: auto;
     font-family: 'Oswald', sans-serif;
