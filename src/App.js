@@ -20,25 +20,27 @@ function App() {
   const [heading, setheading] = useState("")
   const [artist, setartist] = useState("")
   const [searchaudio, setsearchaudio] = useState(false)
-  useEffect(() => {
-    document.getElementById("leftItem").style.backgroundColor = "#1d1d1d"
-    var x = JSON.parse(localStorage.getItem("Recent")) || []
-    console.log(x.length)
-    if (x.length == 0) {
-      document.getElementById("bottomMusic").style.display = "none"
-    }
-    else {
-      document.getElementById("bottomMusic").style.display = "block"
-      x.reverse()
-      setp(x[0].object.preview)
-      setimg(x[0].image)
-      setheading(x[0].object.title)
-      setartist(x[0].object.artist.name)
-      console.log(artist)
-    }
-    console.log(search)
 
-  }, []);
+
+  //   useEffect(() => {
+  //   document.getElementById("leftItem").style.backgroundColor = "#1d1d1d"
+  //   var x = JSON.parse(localStorage.getItem("Recent")) || []
+  //   // console.log(x.length)
+  //   if (x.length == 0) {
+  //     document.getElementById("bottomMusic").style.display = "none"
+  //   }
+  //   else {
+  //     document.getElementById("bottomMusic").style.display = "block"
+  //     x.reverse()
+  //     setp(x[0].object.preview)
+  //     setimg(x[0].image)
+  //     setheading(x[0].object.title)
+  //     setartist(x[0].object.artist.name)
+  //     console.log(artist)
+  //   }
+  //   // console.log(search)
+
+  // }, []);
   const [search, setsearch] = useState(true)
   const [alb, setalb] = useState(false)
   const [playlist, setplaylist] = useState(false)

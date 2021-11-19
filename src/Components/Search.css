@@ -2,13 +2,13 @@
 .SearchBox{
     /* width: 200px; */
     /* height: 89%; */
-    height: 740px;
+    height: 670px;
     overflow-y: scroll;
     list-style-type: none;
     /* border: 2px solid black; */
     border-radius: 10px;
     margin: 10px;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
     /* position: relative; */
     background-color: rgb(34, 34, 34);
     /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
