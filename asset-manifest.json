@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Musify/static/css/main.1776543d.chunk.css",
-    "main.js": "/Musify/static/js/main.01bea98a.chunk.js",
-    "main.js.map": "/Musify/static/js/main.01bea98a.chunk.js.map",
+    "main.js": "/Musify/static/js/main.d69ecd46.chunk.js",
+    "main.js.map": "/Musify/static/js/main.d69ecd46.chunk.js.map",
     "runtime-main.js": "/Musify/static/js/runtime-main.7dfb4be9.js",
     "runtime-main.js.map": "/Musify/static/js/runtime-main.7dfb4be9.js.map",
-    "static/js/2.1106b44e.chunk.js": "/Musify/static/js/2.1106b44e.chunk.js",
-    "static/js/2.1106b44e.chunk.js.map": "/Musify/static/js/2.1106b44e.chunk.js.map",
+    "static/js/2.2c392673.chunk.js": "/Musify/static/js/2.2c392673.chunk.js",
+    "static/js/2.2c392673.chunk.js.map": "/Musify/static/js/2.2c392673.chunk.js.map",
     "static/js/3.e81cf4aa.chunk.js": "/Musify/static/js/3.e81cf4aa.chunk.js",
     "static/js/3.e81cf4aa.chunk.js.map": "/Musify/static/js/3.e81cf4aa.chunk.js.map",
     "index.html": "/Musify/index.html",
     "static/css/main.1776543d.chunk.css.map": "/Musify/static/css/main.1776543d.chunk.css.map",
-    "static/js/2.1106b44e.chunk.js.LICENSE.txt": "/Musify/static/js/2.1106b44e.chunk.js.LICENSE.txt",
+    "static/js/2.2c392673.chunk.js.LICENSE.txt": "/Musify/static/js/2.2c392673.chunk.js.LICENSE.txt",
     "static/media/AddedToPlayList.23ebffa1.gif": "/Musify/static/media/AddedToPlayList.23ebffa1.gif",
     "static/media/Loading.8cfcd9bb.gif": "/Musify/static/media/Loading.8cfcd9bb.gif",
     "static/media/Play.68e0c33f.png": "/Musify/static/media/Play.68e0c33f.png",
@@ -23,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7dfb4be9.js",
-    "static/js/2.1106b44e.chunk.js",
+    "static/js/2.2c392673.chunk.js",
     "static/css/main.1776543d.chunk.css",
-    "static/js/main.01bea98a.chunk.js"
+    "static/js/main.d69ecd46.chunk.js"
   ]
 }
