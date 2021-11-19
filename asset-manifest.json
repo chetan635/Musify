@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Musify/static/css/main.1776543d.chunk.css",
+    "main.js": "/Musify/static/js/main.5dad08c7.chunk.js",
+    "main.js.map": "/Musify/static/js/main.5dad08c7.chunk.js.map",
+    "runtime-main.js": "/Musify/static/js/runtime-main.79b08df9.js",
+    "runtime-main.js.map": "/Musify/static/js/runtime-main.79b08df9.js.map",
+    "static/js/2.b0d55f25.chunk.js": "/Musify/static/js/2.b0d55f25.chunk.js",
+    "static/js/2.b0d55f25.chunk.js.map": "/Musify/static/js/2.b0d55f25.chunk.js.map",
+    "static/js/3.0ac8146a.chunk.js": "/Musify/static/js/3.0ac8146a.chunk.js",
+    "static/js/3.0ac8146a.chunk.js.map": "/Musify/static/js/3.0ac8146a.chunk.js.map",
+    "index.html": "/Musify/index.html",
+    "static/css/main.1776543d.chunk.css.map": "/Musify/static/css/main.1776543d.chunk.css.map",
+    "static/js/2.b0d55f25.chunk.js.LICENSE.txt": "/Musify/static/js/2.b0d55f25.chunk.js.LICENSE.txt",
+    "static/media/AddedToPlayList.23ebffa1.gif": "/Musify/static/media/AddedToPlayList.23ebffa1.gif",
+    "static/media/Loading.8cfcd9bb.gif": "/Musify/static/media/Loading.8cfcd9bb.gif",
+    "static/media/Musify.75fcfdb0.gif": "/Musify/static/media/Musify.75fcfdb0.gif",
+    "static/media/Play.68e0c33f.png": "/Musify/static/media/Play.68e0c33f.png",
+    "static/media/PlayButton.62c29e1a.png": "/Musify/static/media/PlayButton.62c29e1a.png",
+    "static/media/Search2.399cc177.png": "/Musify/static/media/Search2.399cc177.png",
+    "static/media/SongGif2.35d6b970.gif": "/Musify/static/media/SongGif2.35d6b970.gif",
+    "static/media/back.e83ad3d9.png": "/Musify/static/media/back.e83ad3d9.png",
+    "static/media/logo.6ce24c58.svg": "/Musify/static/media/logo.6ce24c58.svg",
+    "static/media/music.8e0bc256.png": "/Musify/static/media/music.8e0bc256.png",
+    "static/media/stop.2ab66e00.png": "/Musify/static/media/stop.2ab66e00.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79b08df9.js",
+    "static/js/2.b0d55f25.chunk.js",
+    "static/css/main.1776543d.chunk.css",
+    "static/js/main.5dad08c7.chunk.js"
+  ]
+}
