@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Musify/static/css/main.40f7f141.chunk.css",
+    "main.css": "/Musify/static/css/main.8f7260b9.chunk.css",
     "main.js": "/Musify/static/js/main.d69ecd46.chunk.js",
     "main.js.map": "/Musify/static/js/main.d69ecd46.chunk.js.map",
     "runtime-main.js": "/Musify/static/js/runtime-main.7dfb4be9.js",
@@ -10,7 +10,7 @@
     "static/js/3.e81cf4aa.chunk.js": "/Musify/static/js/3.e81cf4aa.chunk.js",
     "static/js/3.e81cf4aa.chunk.js.map": "/Musify/static/js/3.e81cf4aa.chunk.js.map",
     "index.html": "/Musify/index.html",
-    "static/css/main.40f7f141.chunk.css.map": "/Musify/static/css/main.40f7f141.chunk.css.map",
+    "static/css/main.8f7260b9.chunk.css.map": "/Musify/static/css/main.8f7260b9.chunk.css.map",
     "static/js/2.2c392673.chunk.js.LICENSE.txt": "/Musify/static/js/2.2c392673.chunk.js.LICENSE.txt",
     "static/media/AddedToPlayList.23ebffa1.gif": "/Musify/static/media/AddedToPlayList.23ebffa1.gif",
     "static/media/Loading.8cfcd9bb.gif": "/Musify/static/media/Loading.8cfcd9bb.gif",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.7dfb4be9.js",
     "static/js/2.2c392673.chunk.js",
-    "static/css/main.40f7f141.chunk.css",
+    "static/css/main.8f7260b9.chunk.css",
     "static/js/main.d69ecd46.chunk.js"
   ]
 }
