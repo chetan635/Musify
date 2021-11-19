@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 // import music from "./music-logo.png"
-import Musify from "./Musify.gif"
+// import Musify from "./Musify.gif"
 import music from "./music.png"
 
 

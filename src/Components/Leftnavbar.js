@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import "./Leftnavbar.css"
-import Logo from "./Musify.gif"
+// import Logo from "./Musify.gif"
 
 import music from "./music.png"
 export default function Leftnavbar(props) {

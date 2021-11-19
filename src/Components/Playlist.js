@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import Details from './Details'
 import "./Playlist.css"
 
 
-import { average, prominent } from 'color.js'
+import { average} from 'color.js'
 
 export default function Playlist(props) {
     const [allPlaylists, setallPlaylists] = useState([])
@@ -33,7 +33,7 @@ export default function Playlist(props) {
         // console.log(ele)
         var x = JSON.parse(localStorage.getItem("allplay"))
         for (let index = 0; index < x.length; index++) {
-            if (ele.id == x[index].id) {
+            if (ele.id === x[index].id) {
                 x.splice(index, 1);
                 break
             }
@@ -63,7 +63,7 @@ export default function Playlist(props) {
 
     function componentToHex(c) {
         var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
+        return hex.length === 1 ? "0" + hex : hex;
     }
 
     function handleImage(img) {
@@ -79,7 +79,7 @@ export default function Playlist(props) {
                 // document.getElementById("first").style.backgroundImage= linearGradient("#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]),"#" + componentToHex(44) + componentToHex(44) + componentToHex(44));
                 var a = "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
                 // setColor(a)
-                var b = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44)
+                // var b = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44)
                 document.getElementById("first2").style.backgroundImage = `linear-gradient(180deg, #FFFFFF  -50%, ${a} 90%)`
                 document.getElementById("PlaylistBox").style.backgroundImage = `linear-gradient(180deg, #FFFFFF  -50%, ${a} 90%)`
                 //  document.getElementById("first").style.backgroundColor = 
@@ -97,7 +97,7 @@ export default function Playlist(props) {
 
     const handleFilter = () => {
         console.log("icon")
-        if (document.getElementById("a").style.display == "none") {
+        if (document.getElementById("a").style.display === "none") {
             document.getElementById("a").style.display = "block"
             document.getElementById("b").style.display = "block"
             document.getElementById("c").style.display = "block"
@@ -264,7 +264,7 @@ export default function Playlist(props) {
                     try{
                         var  p = element.album.cover_xl
                     }catch(error){
-                        var  p="https://nogmi.biz/assets/img/noimage.jpeg"
+                        var p="https://nogmi.biz/assets/img/noimage.jpeg"
                     }
                     return <>
                         <div  onClick={() => { handleUpper(p, element.title, element.artist.name,elemant.id) }} className="PlaylistCard" key={element.id}>

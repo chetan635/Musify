@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./AlbumElements.css"
 import Details from './Details'
-import { average, prominent } from 'color.js'
+import { average} from 'color.js'
 export default function AlbumElements(props) {
 
 
@@ -59,7 +59,7 @@ export default function AlbumElements(props) {
 
     function componentToHex(c) {
         var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
+        return hex.length === 1 ? "0" + hex : hex;
     }
     function handleImage(img) {
         if (img == null) {
@@ -74,7 +74,7 @@ export default function AlbumElements(props) {
                 // document.getElementById("first").style.backgroundImage= linearGradient("#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]),"#" + componentToHex(44) + componentToHex(44) + componentToHex(44));
                 var a = "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
                 // setColor(a)
-                var b = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44)
+                // var b = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44)
                 document.getElementById("Album").style.backgroundImage = `linear-gradient(180deg, #FFFFFF  -50%, ${a} 90%)`
                 // document.getElementById("PlaylistBox").style.backgroundImage = `linear-gradient(180deg, #FFFFFF  -50%, ${a} 90%)`
                 //  document.getElementById("first").style.backgroundColor = 

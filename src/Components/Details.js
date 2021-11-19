@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import "./Details.css"
-import backButton from './back.png'
+// import backButton from './back.png'
 import Play from './Play.png'
 import Stop from './stop.png'
 import SongGif2 from './SongGif2.gif'
 import Added from './AddedToPlayList.gif'
-import { average, prominent } from 'color.js'
-import { useEffect } from 'react/cjs/react.development'
+import { average} from 'color.js'
+// import { useEffect } from 'react/cjs/react.development'
 
 
 export default function Details(props) {
 
     const [toggle, settoggle] = useState(true)
-    var img = document.getElementById("Main-Image")
+    // var img = document.getElementById("Main-Image")
 
     const [Color, setColor] = useState("")
 
@@ -30,7 +30,7 @@ export default function Details(props) {
          
             var array = JSON.parse(localStorage.getItem("Recent")) || []
             for (let index = 0; index < array.length; index++) {
-                if (props.element.id == array[index].object.id) {
+                if (props.element.id === array[index].object.id) {
                     array.splice(index, 1);
                     break
                 }
@@ -45,11 +45,11 @@ export default function Details(props) {
                 localStorage.setItem("Recent",JSON.stringify(array))
             }
             else{
-                var p = {
+                var q = {
                     "object" : props.element,
                     "image" : props.image
                 }
-                array.push(p)
+                array.push(q)
                 console.log(array)
                 localStorage.setItem("Recent",JSON.stringify(array))
 
@@ -72,7 +72,7 @@ export default function Details(props) {
 
     function componentToHex(c) {
         var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
+        return hex.length === 1 ? "0" + hex : hex;
     }
 
     function handleImage(img) {
@@ -89,7 +89,7 @@ export default function Details(props) {
                 // document.getElementById("first").style.backgroundImage= linearGradient("#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]),"#" + componentToHex(44) + componentToHex(44) + componentToHex(44));
                 var a = "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
                 setColor(a)
-                var b = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44)
+                // var b = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44)
                 document.getElementById("first").style.backgroundImage = `linear-gradient(180deg, #FFFFFF  -50%, ${a} 90%)`
                 //  document.getElementById("first").style.backgroundColor = 
                 document.getElementById("first").style.backgroundColor = "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);

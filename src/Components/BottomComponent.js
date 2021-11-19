@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react/cjs/react.development'
+import React from 'react'
+// import { useEffect } from 'react/cjs/react.development'
 import "./BottomComponent.css"
 export default function BottomComponent(props) {
 
@@ -36,7 +36,7 @@ export default function BottomComponent(props) {
         //    console.log(toggle)
         console.log(currentlyPlaying.currentTime)
         var recent = JSON.parse(localStorage.getItem("Recent") || [])
-        if(recent.length == 0){
+        if(recent.length === 0){
             return
         }
         var recentlyPlayed = recent.reverse()
