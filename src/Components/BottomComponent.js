@@ -5,7 +5,7 @@ export default function BottomComponent(props) {
 
 
     // for audio
-    const [toggle, settoggle] = useState(false)
+   
     // const [img, setimg] = useState("")
     // const [heading, setheading] = useState("")
     // const [artist, setartist] = useState("")
@@ -34,7 +34,7 @@ export default function BottomComponent(props) {
 
     const handleAudio = () => {
         //    console.log(toggle)
-        console.log("hello")
+        console.log(currentlyPlaying.currentTime)
         var recent = JSON.parse(localStorage.getItem("Recent") || [])
         if(recent.length == 0){
             return
@@ -70,7 +70,7 @@ export default function BottomComponent(props) {
         currentlyPlaying.pause()
         document.getElementById("play").style.display = "block"
         document.getElementById("pause").style.display = "none"
-        props.searchaudioFunc()
+      
     }
 
     const handleChange = () => {
@@ -78,7 +78,7 @@ export default function BottomComponent(props) {
         // console.log("progress" +":"+ progressBor.value)
         currentlyPlaying.currentTime = progressBor.value * (currentlyPlaying.duration / 100);
         // console.log(currentlyPlaying.currentTime)
-        // progressBor.value=currentlyPlaying.currentTime;
+        progressBor.value=currentlyPlaying.currentTime;
     }
 
     const forward = () => {
@@ -97,6 +97,8 @@ export default function BottomComponent(props) {
     const volumeChange = () => {
         var p = document.getElementById("volumeBar").value
         currentlyPlaying.volume = (p / 100)
+        document.getElementById("volume-on").style.display = "block"
+        document.getElementById("volume-off").style.display = "none"
     }
     var z = 50
     const volumeMax = () => {
@@ -114,12 +116,13 @@ export default function BottomComponent(props) {
 
     }
     const handleSpeed2 = (speed)=>{
-        console.log("abc")
-        // var x = document.getElementsByClassName("dropdown-item")
-        // for(var i = 0; i<x.length;i++){
-        //     x[i].style.backgroundColor="#343a40";
-        // }
-        // document.getElementById(String(speed)).style.backgroundColor="red"
+        console.log(speed)
+        var x = document.getElementsByClassName("dropdown-item")
+        for(var i = 0; i<x.length;i++){
+            x[i].style.backgroundColor="#343a40";
+        }
+        document.getElementById(String(speed)).style.backgroundColor="red"
+        currentlyPlaying.playbackRate = speed;
     }
     const handleHide =()=>{
         document.getElementById("songImage").setAttribute("src",props.img)
@@ -128,13 +131,6 @@ export default function BottomComponent(props) {
     }
 
 
-    console.log("abcdefghijklmnop")
-    // if(props.searchaudio == true){
-    //     handleAudio()
-    // }
-    // else if(props.searchaudio == false){
-    //     handlePause()
-    // }
 
 
 
@@ -154,6 +150,7 @@ export default function BottomComponent(props) {
                         </div>
                     </div>
                 </div>
+                
                 <div className="col-md-4 audioBar">
                     <div className="row">
 
@@ -166,7 +163,7 @@ export default function BottomComponent(props) {
 
                     </div>
 
-
+                    
                     <input type="range" name="range" onChange={handleChange} value="0" id="myProgressBar" />
                 </div>
                 <div className="col-md-4 end">
@@ -176,14 +173,14 @@ export default function BottomComponent(props) {
                         </button> */}
                         <div id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" className="setting "><span class="iconify setting" data-icon="uiw:setting" style={{ color: "white" }}></span></div>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu2">
-                            <li><button id="0.25"  onClick={handleSpeed2(0.25)} class="dropdown-item" type="button">0.25</button></li>
-                            <li><button id="0.5" onClick={handleSpeed2(0.5)} class="dropdown-item " type="button">0.5</button></li>
-                            <li><button id="0.75" onClick={handleSpeed2(0.75)} class="dropdown-item" type="button">0.75</button></li>
-                            <li><button id="1" onClick={handleSpeed2(1)} class="dropdown-item" type="button">Normal</button></li>
-                            <li><button id="1.25" onClick={handleSpeed2(1.25)} class="dropdown-item" type="button">1.25</button></li>
-                            <li><button id="1.5" onClick={handleSpeed2(1.5)} class="dropdown-item" type="button">1.5</button></li>
-                            <li><button id="1.75" onClick={handleSpeed2(1.75)} class="dropdown-item" type="button">1.75</button></li>
-                            <li><button id="2" onClick={handleSpeed2(2)} class="dropdown-item" type="button">2</button></li>
+                            <li><button id="0.25"  onClick={()=>{handleSpeed2(0.25)}} class="dropdown-item" type="button">0.25</button></li>
+                            <li><button id="0.5" onClick={()=>{handleSpeed2(0.5)}} class="dropdown-item " type="button">0.5</button></li>
+                            <li><button id="0.75" onClick={()=>{handleSpeed2(0.75)}} class="dropdown-item" type="button">0.75</button></li>
+                            <li><button style={{backgroundColor:"red"}} id="1" onClick={()=>{handleSpeed2(1)}} class="dropdown-item" type="button">Normal</button></li>
+                            <li><button id="1.25" onClick={()=>{handleSpeed2(1.25)}} class="dropdown-item" type="button">1.25</button></li>
+                            <li><button id="1.5" onClick={()=>{handleSpeed2(1.5)}} class="dropdown-item" type="button">1.5</button></li>
+                            <li><button id="1.75" onClick={()=>{handleSpeed2(1.75)}} class="dropdown-item" type="button">1.75</button></li>
+                            <li><button id="2" onClick={()=>{handleSpeed2(2)}} class="dropdown-item" type="button">2</button></li>
                         </ul>
                     </div>
                     

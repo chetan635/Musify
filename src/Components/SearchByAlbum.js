@@ -9,7 +9,7 @@ import Details from './Details'
 import search from './Search2.png'
 import AlbumElements from './AlbumElements'
 
-export default function Search() {
+export default function Search(props) {
     const [SearchItem, setSearchItem] = useState("")
     const [Toggle, setToggle] = useState(true)
     const [data, setdata] = useState([])
@@ -29,8 +29,15 @@ export default function Search() {
     }
 
     const handleOnSearch = async() => {
+        setdisplay("none")
         if(SearchItem == ""){
-            return 
+            document.getElementById("TextArea2").style.border = "3px solid red"
+           document.getElementById("TextArea2").setAttribute("placeholder","Enter Something First")
+            setTimeout(() => {
+                document.getElementById("TextArea2").style.border = "0px"
+                document.getElementById("TextArea2").setAttribute("placeholder","Search by Album")
+            }, 1500);
+            return
         }
         if(display==="block"){
            setdisplay("none")
@@ -86,7 +93,7 @@ export default function Search() {
           <div className="SearchBox">
               <h1 className="art-hed">Search By Album</h1>
                 <div className="search-item d-flex">
-                    <textarea rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem}  placeholder="Search by Album" aria-label="Search" />
+                    <textarea id="TextArea2" rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem}  placeholder="Search by Album" aria-label="Search" />
                     <button onClick={handleOnSearch} className="btn btn-outline-success" type="submit">Search</button>
                 </div>
                 <img style={{display:{display}}} className="searchImage" id="searchImage"  src={search} alt="" />
@@ -104,7 +111,7 @@ export default function Search() {
         )
     }
     else{
-        return <div><AlbumElements change={change} id={key}/></div>
+        return <div><AlbumElements xyz={props.xyz} change={change} id={key}/></div>
     }
 
     

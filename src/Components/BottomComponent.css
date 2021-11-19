@@ -1,7 +1,7 @@
 .bottom{
     position: absolute ;
     bottom: 0px;
-    height: 104px;
+    height: auto;
     font-family: 'Oswald', sans-serif;
     background-color: rgb(26, 26, 26);
 }
@@ -27,7 +27,7 @@
     justify-content: flex-end;
 }
 #myProgressBar{
-    width: 470px;
+    width: 580px;
     margin-top: 12px;
     height: 2px;
     outline: none;
@@ -38,9 +38,9 @@
   border-radius: 8px;
     
 }
-#myProgressBar:hover{
+/* #myProgressBar:hover{
     height: 7px;
-}
+} */
 
 .play-b{
     font-size: 40px;
@@ -85,6 +85,7 @@
 #volumeBar{
     height: 2px;
     margin: 9px;
+    
 }
 .setting{
     font-size: 22px;

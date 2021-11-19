@@ -1,7 +1,7 @@
 .musicCard{
-    color: white;
+    color: rgb(204, 204, 204);
     background-color: rgb(29, 29, 29);
-    
+    font-family: 'Oswald', sans-serif;
 }
 
 .musicCard:hover{
@@ -15,10 +15,10 @@
     width: 300px; */
 }
 .play-button{
-    height: 55px;
+    height: 45px;
     opacity: 0;
     transition: visibility 0s, opacity 1s linear;
-    width: 55px;
+    width: 45px;
    float: right;
    /* transition: 1s; */
     
@@ -26,8 +26,8 @@
 }
 .play-button:hover{
     transition: 0.5s;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
 }
 .musicCard:hover .play-button { visibility: visible; opacity: 1; }
 

@@ -21,6 +21,7 @@ function App() {
   const [artist, setartist] = useState("")
   const [searchaudio, setsearchaudio] = useState(false)
   useEffect(() => {
+    document.getElementById("leftItem").style.backgroundColor = "#1d1d1d"
     var x = JSON.parse(localStorage.getItem("Recent")) || []
     console.log(x.length)
     if (x.length == 0) {
@@ -54,22 +55,34 @@ function App() {
       setimg(x[0].image)
       setheading(x[0].object.title)
       setartist(x[0].object.artist.name)
+      if(document.getElementById("bottomMusic").style.display === "none"){
+        document.getElementById("bottomMusic").style.display = "block"
+      }
    }
 
 
 
   const displaySearch = () => {
     console.log("happy")
+    document.getElementById("leftItem").style.backgroundColor = "#1d1d1d"
+    document.getElementById("leftItem2").style.backgroundColor = "rgb(83, 83, 83)"
+    document.getElementById("leftItem3").style.backgroundColor = "rgb(83, 83, 83)"
     setsearch(true)
     setalb(false)
     setplaylist(false)
   }
   const displayAlb = () => {
+    document.getElementById("leftItem3").style.backgroundColor = "#1d1d1d"
+    document.getElementById("leftItem").style.backgroundColor = "rgb(83, 83, 83)"
+    document.getElementById("leftItem2").style.backgroundColor = "rgb(83, 83, 83)"
     setsearch(false)
     setalb(true)
     setplaylist(false)
   }
   const displayPlaylist = () => {
+    document.getElementById("leftItem2").style.backgroundColor = "#1d1d1d"
+    document.getElementById("leftItem3").style.backgroundColor = "rgb(83, 83, 83)"
+    document.getElementById("leftItem").style.backgroundColor = "rgb(83, 83, 83)"
     setsearch(false)
     setalb(false)
     setplaylist(true)

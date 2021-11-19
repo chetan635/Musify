@@ -8,7 +8,7 @@
     list-style-type: none;
     /* border: 2px solid black; */
     border-radius: 10px;
-    margin: 10px;
+    margin: 0px;
     color: white;
     background-color: rgb(34, 34, 34);
     /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
@@ -80,9 +80,9 @@
     background-color: rgb(121, 121, 121);
 }
 
-.leftItem:hover .leftItem-logo1{color: rgb(230, 0, 0);}
-.leftItem:hover .leftItem-logo2{color: rgb(0, 195, 255);}
-.leftItem:hover .leftItem-logo3{color: rgb(255, 238, 0);}
+.leftItem:hover .leftItem-logo1{color: rgb(255, 224, 87);}
+.leftItem:hover .leftItem-logo2{color: rgb(10, 195, 252);}
+.leftItem:hover .leftItem-logo3{color: rgb(63, 8, 60);}
 .leftItem:hover .leftItem-title{color: rgb(34, 34, 34);}
 
 /* .leftItem-logo1:hover{

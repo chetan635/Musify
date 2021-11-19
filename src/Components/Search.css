@@ -8,6 +8,7 @@
     /* border: 2px solid black; */
     border-radius: 10px;
     margin: 10px;
+    padding-bottom: 100px;
     /* position: relative; */
     background-color: rgb(34, 34, 34);
     /* -moz-box-shadow: 0 0 20px  rgb(134, 134, 134);
@@ -112,4 +113,8 @@ textarea{
     padding: 20px;
     margin-top: 15px;
     margin-left: 245px;
+}
+
+.recentPlay:hover{
+    font-size: 20px;
 }

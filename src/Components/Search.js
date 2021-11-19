@@ -6,7 +6,10 @@ import "./Search.css"
 import MusicItem from './MusicItem'
 import spinner from './spinner'
 import search from './Search2.png'
+import Pause from './stop.png'
+import Play from './Play.png'
 import Details from './Details'
+import { average, prominent } from 'color.js'
 
 export default function Search(props) {
     const [SearchItem, setSearchItem] = useState("")
@@ -37,6 +40,13 @@ export default function Search(props) {
 
     const handleOnSearch = async () => {
         if(SearchItem == ""){
+            document.getElementById("TextArea").style.border = "3px solid red"
+           document.getElementById("TextArea").setAttribute("placeholder","Enter Something First")
+            setTimeout(() => {
+                document.getElementById("TextArea").style.border = "0px"
+                document.getElementById("TextArea").setAttribute("placeholder","Search by Artist")
+            }, 1500);
+           
             return 
         }
         await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${SearchItem}`, {
@@ -159,9 +169,47 @@ export default function Search(props) {
             var z = document.getElementsByClassName("chetan")
             for(var i = 0;i<z.length;i++){
                 z[i].style.backgroundColor = "rgb(29, 29, 29)"
+                z[i].setAttribute("src",{Play})
             }
-            document.getElementsByClassName("chetan")[index].style.backgroundColor = "#463f4b"
+            document.getElementsByClassName("chetan")[index].setAttribute("src",{Pause})
+           
+            handleImage2(image , index)
     }
+
+    // for color
+    function componentToHex(c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    function handleImage2(img,index) {
+        // document.getElementById("bottomMusic").style.display = "none"
+        if (img == null) {
+            document.getElementById("first").style.backgroundColor = "#" + componentToHex(44) + componentToHex(44) + componentToHex(44);
+
+        }
+        else {
+            average(img, { amount: 5 }).then(color => {
+                // document.getElementsByClassName("first").style.backgroundColor = color;
+                // console.log(color)
+                // console.log("Hello")
+                // document.getElementById("first").style.backgroundImage= linearGradient("#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]),"#" + componentToHex(44) + componentToHex(44) + componentToHex(44));
+                var a = "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
+                try {
+                    document.getElementsByClassName("chetan")[index].style.backgroundColor = String(a)
+                } catch (error) {
+                    
+                }
+                
+                
+            })
+        }
+
+    }
+
+
+
+
 
 
     if (Toggle) {
@@ -170,7 +218,7 @@ export default function Search(props) {
             <div className="SearchBox">
                 <h1 className="art-hed">Search By Artist</h1>
                 <div className="search-item d-flex">
-                    <textarea rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem} placeholder="Search by Artist" aria-label="Search" />
+                    <textarea id="TextArea" rows="1" style={{ resize: "none" }} onChange={handleChange} value={SearchItem} placeholder="Search by Artist" aria-label="Search" />
                     <button onClick={handleOnSearch} className="btn btn-outline-success" type="submit">Search</button>
                 </div>
                 <div className="row">
@@ -201,7 +249,7 @@ export default function Search(props) {
                                         <h2 className="middle-duration" >{Time(element.object.duration)}</h2>
                                     </div>
                                     <div className="col-md-2">
-                                    <div onClick={()=>enter_details(element)}  className="btn btn-warning">
+                                    <div onClick={()=>enter_details(element)}  className="btn btn-warning recentPlay">
                                         <i style={{ fontSize: "25px" }} className="fa fa-play-circle-o"></i>
                                     </div>
                                     </div>
@@ -216,7 +264,7 @@ export default function Search(props) {
                     {data.map((element,index) => {
                         return <div className="col-md-3" key={element.id} >
                             <div  className="xyz" onClick={()=>{addRecent(element,element.album.cover_xl,index)}} onDoubleClick={() => { handleOnclick(element) }}>
-                                <MusicItem ele_id={index}  xyz={props.xyz} searchaudioFunc={props.searchaudioFunc} image={element.album.cover_xl} artist={element.artist.name} title={element.title} />
+                                <MusicItem index={index}  xyz={props.xyz} searchaudioFunc={props.searchaudioFunc} image={element.album.cover_xl} artist={element.artist.name} title={element.title} />
                             </div>
                         </div>
                     })}

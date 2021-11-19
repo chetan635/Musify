@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Leftnavbar.css"
 import Logo from "./Musify.gif"
-import music from "./music-logo.png"
+
+import music from "./music.png"
 export default function Leftnavbar(props) {
 
     const handleHide = ()=>{
@@ -16,7 +17,7 @@ export default function Leftnavbar(props) {
             <div className="logo-design" id="logo-design">
                 <div className="row">
                     <div className="col-md-4">
-                        <img src={Logo} id="Logo-image" alt="" />
+                        <img src={music} id="Logo-image" alt="" />
                     </div>
                     <div className="col-md-8  title-col" >
                         Musify
